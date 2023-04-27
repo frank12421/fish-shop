@@ -51,7 +51,7 @@ export default function Product({ onSubmit, onDelete }) {
       )}
 
       <StyledButton onClick={() => onDelete(id)} type="button">
-        deleted
+        Deleted
       </StyledButton>
 
       <StyledLink href="/">Back to all</StyledLink>
