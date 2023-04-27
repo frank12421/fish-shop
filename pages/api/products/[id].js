@@ -14,4 +14,16 @@ export default async function handler(request, response) {
 
     response.status(200).json(product);
   }
+
+  if (request.method === "PUT") {
+    const productData = request.body;
+    console.log("api-id-body:", productData);
+    await Product.findByIdAndUpdate(id, productData);
+    response.status(200).json({ message: `Product successfully updated.` });
+  }
+
+  if (request.method === "DELETE") {
+    await Product.findByIdAndDelete(id);
+    response.status(200).json({ message: `Product successfully deleted!` });
+  }
 }
